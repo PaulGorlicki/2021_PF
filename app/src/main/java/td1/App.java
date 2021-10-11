@@ -9,6 +9,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        Paire a = new Paire<Integer,String>(2, "Yo");
+        System.out.println(a.toString());
     }
 }
