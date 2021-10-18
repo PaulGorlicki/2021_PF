@@ -13,6 +13,7 @@ public class App {
         //System.out.println(a.toString());
         Feuille A = new Feuille(0);
         Feuille B = new Feuille ("String, le voilà");
+
         System.out.println(A.toString());
         System.out.println(B.toString());
     }
