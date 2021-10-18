@@ -4,9 +4,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class Noeud <T> implements Arbre <T> {
+public class Noeud <T extends Sommable<T>> implements Arbre <T> {
 
     private final List<Arbre> fils;
+    private List <Arbre<T>> enfants;
 
     public Noeud(final List<Arbre> fils) {
         this.fils = fils;
@@ -41,7 +42,16 @@ public class Noeud <T> implements Arbre <T> {
 
     @Override
     public T somme() {
-        return null;
+        if (enfants == null || enfants.size() == 0) {
+            return null;
+        }
+        else {
+            T v = enfants.get(0).somme();
+            for (int i=0; i<enfants.size(); i++) {
+                v = v.sommer(enfants.get(i).somme());
+            }
+            return v;
+        }
     }
 
     @Override

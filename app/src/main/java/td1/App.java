@@ -11,10 +11,5 @@ public class App {
     public static void main(String[] args) {
         //Paire a = new Paire<Integer,String>(2, "Yo");
         //System.out.println(a.toString());
-        Feuille A = new Feuille(0);
-        Feuille B = new Feuille ("String, le voilà");
-
-        System.out.println(A.toString());
-        System.out.println(B.toString());
     }
 }

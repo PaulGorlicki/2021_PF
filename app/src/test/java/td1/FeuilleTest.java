@@ -4,8 +4,10 @@ import junit.framework.TestCase;
 import java.util.Set;
 
 public class FeuilleTest extends TestCase {
-    Feuille A = new Feuille(4);
-    Feuille B = new Feuille ("bonjour");
+    Entier E1 = new Entier(4);
+    Chaine C1 = new Chaine("bonjour");
+    Feuille A = new Feuille(E1);
+    Feuille B = new Feuille (C1);
 
     public void testTaille() {
         assertEquals(1, A.taille());
@@ -13,27 +15,27 @@ public class FeuilleTest extends TestCase {
     }
 
     public void testContientTrue() {
-        assertEquals(true, A.contient(4));
-        assertEquals(true, B.contient("bonjour"));
+        assertEquals(true, A.contient(E1));
+        assertEquals(true, B.contient(C1));
     }
 
     public void testContientFalse() {
-        assertEquals(false, A.contient(2));
-        assertEquals(false, B.contient(1));
+        assertEquals(false, A.contient(C1));
+        assertEquals(false, B.contient(E1));
     }
 
     public void testSomme() {
-        assertEquals(4, A.somme());
-        assertEquals("bonjour", B.somme());
+        assertEquals(E1, A.somme());
+        assertEquals(C1, B.somme());
     }
 
     public void testMin() {
-        assertEquals(4, A.min());
-        assertEquals("bonjour", B.min());
+        assertEquals(E1, A.min());
+        assertEquals(C1, B.min());
     }
 
     public void testValeur() {
-        assertEquals(Set.of(4), A.valeurs());
-        assertEquals(Set.of("bonjour"), B.valeurs());
+        assertEquals(Set.of(E1), A.valeurs());
+        assertEquals(Set.of(C1), B.valeurs());
     }
 }

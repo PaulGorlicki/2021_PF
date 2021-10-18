@@ -1,7 +1,7 @@
 package td1;
 
 public class Entier implements Sommable <Entier> {
-    int entier;
+    private int entier;
 
     public Entier(int entier) {
         this.entier = entier;
