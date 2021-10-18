@@ -21,14 +21,14 @@ public class Paire<A,B> implements IPaire<A,B> {
 
     @Override
     public <C> IPaire<A, B> changeFst(C value) {
-        //return <value, snd>;
-        return null;
+        Paire a = new Paire<C,B>(value, snd);
+        return a;
     }
 
     @Override
     public <C> IPaire<A, B> changeSnd(C value) {
-        //return <fst, value>;
-        return null;
+        Paire a = new Paire<A,C>(fst, value);
+        return a;
     }
 
     @Override
