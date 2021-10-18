@@ -9,7 +9,7 @@ public class App {
     }
 
     public static void main(String[] args) {
-        Paire a = new Paire<Integer,String>(2, "Yo");
-        System.out.println(a.toString());
+        //Paire a = new Paire<Integer,String>(2, "Yo");
+        //System.out.println(a.toString());
     }
 }
