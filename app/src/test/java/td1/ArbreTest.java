@@ -28,4 +28,8 @@ public class ArbreTest extends TestCase {
     public void testValeurs() {
         assertEquals(Set.of(v1,v2), t.valeurs());
     }
-}
+/*
+    public void testSomme() {
+        assertEquals(6, t.somme());
+    }
+*/}

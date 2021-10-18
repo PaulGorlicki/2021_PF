@@ -5,18 +5,16 @@ import java.util.List;
 import java.util.Set;
 
 public class Noeud <T extends Sommable<T>> implements Arbre <T> {
-
-    private final List<Arbre> fils;
     private List <Arbre<T>> enfants;
 
-    public Noeud(final List<Arbre> fils) {
-        this.fils = fils;
+    public Noeud(final List<Arbre<T>> enfants) {
+        this.enfants = enfants;
     }
 
     @Override
     public int taille() {
         int rtr = 0;
-        for (final Arbre a : fils) {
+        for (final Arbre a : enfants) {
             rtr += a.taille();
         }
         return rtr;
@@ -25,7 +23,7 @@ public class Noeud <T extends Sommable<T>> implements Arbre <T> {
     @Override
     public boolean contient(T val) {
         boolean rtr = false;
-        for (final Arbre a : fils) {
+        for (final Arbre a : enfants) {
             if (a.contient(val)) return true;
         }
         return rtr;
@@ -34,7 +32,7 @@ public class Noeud <T extends Sommable<T>> implements Arbre <T> {
     @Override
     public Set<T> valeurs() {
         Set<T> rtr = new HashSet<>();
-        for (final Arbre a : fils) {
+        for (final Arbre a : enfants) {
             rtr.addAll(a.valeurs());
         }
         return rtr;
@@ -47,7 +45,8 @@ public class Noeud <T extends Sommable<T>> implements Arbre <T> {
         }
         else {
             T v = enfants.get(0).somme();
-            for (int i=0; i<enfants.size(); i++) {
+            int i;
+            for (i = 1; i<enfants.size(); i++) {
                 v = v.sommer(enfants.get(i).somme());
             }
             return v;
