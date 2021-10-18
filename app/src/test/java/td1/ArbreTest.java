@@ -3,6 +3,7 @@ package td1;
 import junit.framework.TestCase;
 
 import java.util.List;
+import java.util.Set;
 
 public class ArbreTest extends TestCase {
     Entier v1 = new Entier(1);
@@ -22,5 +23,9 @@ public class ArbreTest extends TestCase {
         assertEquals(true, t.contient(v1));
         assertEquals(true, t.contient(v2));
         assertEquals(false, t.contient(v3));
+    }
+
+    public void testValeurs() {
+        assertEquals(Set.of(v1,v2), t.valeurs());
     }
 }
