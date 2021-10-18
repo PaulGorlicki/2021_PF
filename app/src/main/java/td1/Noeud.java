@@ -1,5 +1,5 @@
 package td1;
-
+/*
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -90,6 +90,7 @@ public class Noeud implements Arbre {
      * <li>&forall; i &in; 1..n-1, max(fi)<= min(fi+1)</li>
      * </ol>
      */
+/*
     @Override
     public boolean estTrie() {
         return conditionTrie1() && conditionTrie2();
@@ -116,4 +117,4 @@ public class Noeud implements Arbre {
         return rtr;
     }
 
-}
+}*/

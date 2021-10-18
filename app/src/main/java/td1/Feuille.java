@@ -2,11 +2,11 @@ package td1;
 
 import java.util.Set;
 
-public class Feuille implements Arbre {
+public class Feuille <T> implements Arbre <T> {
 
-    private final int valeur;
+    private T valeur;
 
-    public Feuille(final int valeur) {
+    public Feuille(T valeur) {
         this.valeur = valeur;
     }
 
@@ -16,28 +16,37 @@ public class Feuille implements Arbre {
     }
 
     @Override
-    public boolean contient(final Integer val) {
-        return val.equals(valeur);
+    public boolean contient(T val) {
+        if (val == valeur) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     @Override
-    public Set<Integer> valeurs() {
+    public Set<T> valeurs() {
         return Set.of(valeur);
     }
 
     @Override
-    public Integer somme() {
+    public T somme() {
         return valeur;
     }
 
     @Override
-    public Integer min() {
+    public T min() {
         return valeur;
     }
 
     @Override
-    public Integer max() {
+    public T max() {
         return valeur;
+    }
+
+    public String toString() {
+        return "Feuille : " + valeur;
     }
 
     /**
