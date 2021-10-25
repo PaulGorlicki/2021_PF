@@ -7,7 +7,7 @@ public interface ToString <T> {
     ToString<Object> ConvertString = new ToString<Object>() {
 
         @Override
-        public Object toString(Object x) {
+        public String toString(Object x) {
             return x.toString();
         }
     };

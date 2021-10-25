@@ -3,12 +3,40 @@
  */
 package td2;
 
+import org.checkerframework.checker.units.qual.C;
+import td2.Exo.Client;
+
+import java.util.function.Predicate;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
+    public static void question2() {
+        Client M = new Client(201, 90);
+        Predicate<Integer> tropPetit = taille -> taille < 100;
+        Predicate<Integer> tropGrand = taille -> taille > 200;
+        Predicate<Integer> tailleNotOK = tropPetit.or(tropGrand);
+        Predicate<Integer> tailleOK = tailleNotOK.negate();
+        Predicate<Double> tropLourd = poids -> poids > 150.0;
+        Predicate<Double> poidsOK = tropLourd.negate();
+        //Predicate<Client> accesOK = tailleOK.and(poidsOK);
+
+        int taille = M.getTaille();
+        double poids = M.getPoids();
+
+        System.out.println(taille + " trop petit? " + tropPetit.test(taille));
+        System.out.println(taille + " trop grand? " + tropGrand.test(taille));
+        System.out.println(taille + " taille not OK? " + tailleNotOK.test(taille));
+        System.out.println(taille + " taille OK? " + tailleOK.test(taille));
+        System.out.println(poids + " trop gros? " + tropLourd.test(poids));
+        System.out.println(poids + " poids OK? " + poidsOK.test(poids));
+        //System.out.println("acces OK? " + accesOK.test(M));
+    }
+
     public static void main(String[] args) {
-        System.out.println("Bonjour");
+        question2();
     }
 }
+
