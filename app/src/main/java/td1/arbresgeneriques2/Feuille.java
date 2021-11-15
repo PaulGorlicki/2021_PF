@@ -1,12 +1,12 @@
-package td1;
+package td1.arbresgeneriques2;
 
 import java.util.Set;
 
-public class Feuille <T extends Sommable<T>> implements Arbre <T> {
+public class Feuille<T extends Sommable<T> & Comparable<T>> implements Arbre<T> {
 
-    private T valeur;
+    private final T valeur;
 
-    public Feuille(T valeur) {
+    public Feuille(final T valeur) {
         this.valeur = valeur;
     }
 
@@ -16,13 +16,8 @@ public class Feuille <T extends Sommable<T>> implements Arbre <T> {
     }
 
     @Override
-    public boolean contient(T val) {
-        if (val == valeur) {
-            return true;
-        }
-        else {
-            return false;
-        }
+    public boolean contient(final T val) {
+        return val.equals(valeur);
     }
 
     @Override
@@ -45,16 +40,9 @@ public class Feuille <T extends Sommable<T>> implements Arbre <T> {
         return valeur;
     }
 
-    public String toString() {
-        return "Feuille : " + valeur;
-    }
-
-    /**
-     * une feuille est toujours triée.
-     */
     @Override
     public boolean estTrie() {
         return true;
     }
-
+    
 }
