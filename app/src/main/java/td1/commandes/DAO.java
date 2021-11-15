@@ -61,10 +61,16 @@ public class DAO {
      * liste des commandes vérifiant un prédicat
      */
     public List<Commande> selectionCommande(Predicate<Commande> p) {
-        return commandes.stream()
-            .filter(p)
-            .collect(Collectors.toList());
+        List<Commande> listeCommande = new ArrayList<>();
+        commandes.forEach(c -> {
+            if(p.test(c)) {
+                listeCommande.add(c);
+            }
+        });
+        return listeCommande;
     }
+
+
 
     /**
      * liste des commandes dont au moins une ligne vérifie un prédicat
