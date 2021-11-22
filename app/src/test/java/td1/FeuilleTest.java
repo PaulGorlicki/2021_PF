@@ -1,4 +1,4 @@
-package td1;
+/*package td1;
 
 import junit.framework.TestCase;
 import java.util.Set;
@@ -38,4 +38,4 @@ public class FeuilleTest extends TestCase {
         assertEquals(Set.of(E1), A.valeurs());
         assertEquals(Set.of(C1), B.valeurs());
     }
-}
+}*/
