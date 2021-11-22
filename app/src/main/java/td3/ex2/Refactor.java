@@ -1,5 +1,6 @@
 package td3.ex2;
 
+import td1.paires.Paire;
 import td2.universite.Annee;
 import td2.universite.Etudiant;
 import td2.universite.Matiere;
@@ -10,6 +11,8 @@ import static td2.App.aDEF;
 public class Refactor {
 
     public static final Function<Annee, Stream<Matiere>> matieresA = null;
+
+    public static final Function<Paire<Double, Integer>, Double> divise = p -> p.fst() / p.snd();
 
    /* public static final Function<Etudiant, Double> moyenne = e -> (e == null || aDEF
             .test(e)) ? null : computeMoyenne.apply(e);
